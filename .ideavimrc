@@ -1,0 +1,55 @@
+set scrolloff=10
+set linenumber
+set relativenumber
+set showmode
+set showcmd
+set visualbell
+set clipboard+=unnamed
+
+
+let mapleader = " "
+set NERDTree
+Plug ´preservim/nerdtree´
+map <C-h> :NERDTreeFocus<CR>
+
+
+set which-key
+
+let g:WhichKeyDesc_display = "<leader>d Display options"
+
+let g:WhichKeyDesc_zen_mode = "<leader>dz Toggle Zen mode"
+let g:WhichKeyDesc_df_mode = "<leader>dd Toggle Distraction-Free mode"
+let g:WhichKeyDesc_fullscreen = "<leader>df Toggle full screen"
+
+
+" Tab navigation
+nnoremap L :tabnext<CR>
+nnoremap H :tabprev<CR>
+
+" Center screen on scrolling
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
+" Debugging & Testing
+nnoremap <leader>dc :action Debug<CR>
+nnoremap <leader>db :action ToggleLineBreakPoint<CR>
+nnoremap <leader>rt :action RunTests<CR>
+
+
+" Move visual selection up and down
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+" Code quick actions
+nnoremap <leader>cr :action RenameElement<CR>
+nnoremap <leader>cf :action FindUsages<CR>
+nnoremap gb <C-o>
+map gi <Action>(GotoImplementation)
+nnoremap <leader>c :action CommentByLineComment<CR>
+vnoremap <leader>c :action CommentByLineComment<CR>
+
+map <leader>cd <Action>(ShowErrorDescription)
+map KK <Action>(ShowHoverInfo)
+
+nnoremap <leader>cc :source ~/.ideavimrc<CR>
+

@@ -114,4 +114,4 @@ export LANG=en_US.UTF-8
 export LANG=en_US.UTF-8
 source <(fzf --zsh)
 
-alias configsync="cp ~/.zshrc ~/git/dev-ex-config/ && cp -r ~/.config/nvim/* ~/git/dev-ex-config/nvim/ && cp -r ~/.tmux.conf ~/git/dev-ex-config/ && cd ~/git/dev-ex-config/ && brew bundle dump --force"
+alias cfigpull="~/git/dev-ex-config/config-sync.sh pull"
