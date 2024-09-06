@@ -15,7 +15,7 @@ if [[ $1 == "pull" ]]; then
   cp $IDEAVIM_CONFIG $CONFIG_REPO_DIR
   cd $CONFIG_REPO_DIR
   brew bundle dump --force
-elif [[ condition ]]; then
+elif [[ $1 == "push" ]]; then
   echo "Pushing configs into relevant dirs"
   cp -r "${CONFIG_REPO_DIR}/nvim/*" $NVIM_DIR
   cp "${CONFIG_REPO_DIR}/.zshrc" $ZSH_CONFIG
