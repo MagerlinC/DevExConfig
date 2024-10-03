@@ -11,7 +11,7 @@ brew "lazygit"
 brew "neovim"
 brew "node"
 brew "node@18"
-brew "node@20", link: true
+brew "node@20"
 brew "pinentry-mac"
 brew "ripgrep"
 brew "tmux"
