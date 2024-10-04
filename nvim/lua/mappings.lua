@@ -11,21 +11,26 @@ map("i", "jk", "<ESC>")
 
 map("n", "gb", "<C-o>", { silent = true, desc = "Go back" })
 
+map("n", "<leader>cr", vim.lsp.buf.rename, { silent = true, desc = "Rename" })
+
+map("n", "<leader>tm", function()
+  require("nvchad.themes").open()
+end, { desc = "telescope nvchad themes" })
+
 -- Hop
--- place this in one of your configuration file(s)
 local hop = require "hop"
 local directions = require("hop.hint").HintDirection
 map("", "<leader>hw", function()
   hop.hint_words()
 end, { desc = "Hop word" })
 map("", "f", function()
-  hop.hint_char1 { direction = directions.AFTER_CURSOR, current_line_only = true }
+  hop.hint_char1 { direction = directions.after_cursor, current_line_only = true }
 end, { remap = true })
-map("", "F", function()
-  hop.hint_char1 { direction = directions.BEFORE_CURSOR, current_line_only = true }
+map("", "f", function()
+  hop.hint_char1 { direction = directions.before_cursor, current_line_only = true }
 end, { remap = true })
 map("", "t", function()
-  hop.hint_char1 { direction = directions.AFTER_CURSOR, current_line_only = true, hint_offset = -1 }
+  hop.hint_char1 { direction = directions.after_cursor, current_line_only = true, hint_offset = -1 }
 end, { remap = true })
 map("", "T", function()
   hop.hint_char1 { direction = directions.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 }
@@ -52,6 +57,7 @@ map("n", "Q", "<nop>")
 local builtin = require "telescope.builtin"
 map("n", "<leader><leader>", builtin.find_files, { desc = "Telescope find files" })
 map("n", "<leader>sg", builtin.live_grep, { desc = "Telescope live grep" })
+map("n", "<leader>fr", builtin.lsp_references, { desc = "Find references" })
 
 -- NvChad Terminal
 map("t", "<Esc>", "<C-\\><C-n>", { silent = true, desc = "Exit terminal mode" })
