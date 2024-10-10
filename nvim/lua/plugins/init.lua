@@ -26,6 +26,7 @@ return {
         "fish",
         "rust",
       })
+
       return vim.tbl_deep_extend("force", opts, {
         autotag = {
           enable = true,

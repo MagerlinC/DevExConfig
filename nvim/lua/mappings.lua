@@ -1,21 +1,16 @@
 require "nvchad.mappings"
 
--- add yours here
-
 local map = vim.keymap.set
-
+-- source keymaps
 map("n", "<leader>cc", ":source ~/.config/nvim/lua/mappings.lua<CR>", { desc = "source keymaps" })
 
-map("n", ";", ":", { desc = "CMD enter command mode" })
-map("i", "jk", "<ESC>")
-
+-- Various mappings
 map("n", "gb", "<C-o>", { silent = true, desc = "Go back" })
-
 map("n", "<leader>cr", vim.lsp.buf.rename, { silent = true, desc = "Rename" })
-
 map("n", "<leader>tm", function()
   require("nvchad.themes").open()
 end, { desc = "telescope nvchad themes" })
+map("n", "<leader>gb", ":GitBlameToggle<CR>", { silent = true, desc = "Git blame" })
 
 -- Hop
 local hop = require "hop"
@@ -37,10 +32,16 @@ map("", "T", function()
 end, { remap = true })
 
 -- Navigate buffers
-map("n", "H", ":bp<CR>", { silent = true, desc = "Prev buffer" })
-map("n", "L", ":bn<CR>", { silent = true, desc = "Next buffer" })
-map("n", "<leader>bo", ":%bd|e#<CR>", { silent = true, desc = "Close all buffers except current" })
+map("n", "L", function()
+  require("nvchad.tabufline").next()
+end, { desc = "buffer goto next" })
+
+map("n", "H", function()
+  require("nvchad.tabufline").prev()
+end, { desc = "buffer goto prev" })
+
 map("n", "<leader>bd", ":bd<CR>", { silent = true, desc = "Close current buffer" })
+map("n", "<leader>bo", ":%bd|e#<CR>", { silent = true, desc = "Close all buffers except current" })
 
 -- Visual mode move lines
 map("v", "J", ":m '>+1<CR>gv=gv", { silent = true, desc = "Move selected lines down" })
@@ -66,10 +67,29 @@ map("n", "<leader>th", function()
 end, { desc = "terminal new horizontal term" })
 
 -- Harpoon
-map("n", "<leader>H", function()
-  require("harpoon.mark").add_file()
-end, { desc = "Harpoon add mark" })
+local harpoon = require "harpoon"
+harpoon:setup()
 
+map("n", "<leader>H", function()
+  harpoon:list():add()
+end)
 map("n", "<leader>h", function()
-  require("harpoon.ui").toggle_quick_menu()
-end, { desc = "Harpoon toggle quick menu" })
+  harpoon.ui:toggle_quick_menu(harpoon:list())
+end)
+
+map("n", "<leader>1", function()
+  harpoon:list():select(1)
+end, { desc = "Harpoon goto mark 1" })
+
+map("n", "<leader>2", function()
+  harpoon:list():select(2)
+end, { desc = "Harpoon goto mark 2" })
+map("n", "<leader>3", function()
+  harpoon:list():select(3)
+end, { desc = "Harpoon goto mark 3" })
+map("n", "<leader>4", function()
+  harpoon:list():select(4)
+end, { desc = "Harpoon goto mark 4" })
+map("n", "<leader>5", function()
+  harpoon:list():select(5)
+end, { desc = "Harpoon goto mark 5" })
