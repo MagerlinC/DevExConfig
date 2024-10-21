@@ -55,3 +55,12 @@ map KK <Action>(ShowHoverInfo)
 
 nnoremap <leader>cc :source ~/.ideavimrc<CR>
 
+" Harpoon
+map <leader>1 <Action>(GotoHarpoon1)
+map <leader>2 <Action>(GotoHarpoon2)
+map <leader>3 <Action>(GotoHarpoon3)
+map <leader>4 <Action>(GotoHarpoon4)
+map <leader>5 <Action>(GotoHarpoon5)
+
+map <leader>H <Action>(AddToHarpoon)
+map <leader>h <Action>(ShowHarpoon)
