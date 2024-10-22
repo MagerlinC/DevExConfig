@@ -14,6 +14,7 @@ brew "node@18"
 brew "node@20", link: true
 brew "pinentry-mac"
 brew "ripgrep"
+brew "starship"
 brew "tmux"
 brew "yarn"
 brew "ykman"

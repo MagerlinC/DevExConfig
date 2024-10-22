@@ -5,6 +5,7 @@ set showmode
 set showcmd
 set visualbell
 set clipboard+=unnamed
+set smartcase
 
 
 let mapleader = " "
@@ -43,6 +44,8 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 " Code quick actions
+map <leader>ca <Action>(ShowIntentionActions)
+
 nnoremap <leader>cr :action RenameElement<CR>
 nnoremap <leader>fr :action FindUsages<CR>
 nnoremap gb <C-o>
