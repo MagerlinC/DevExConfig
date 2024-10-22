@@ -97,13 +97,6 @@ map("n", "<leader>5", function()
   harpoon:list():select(5)
 end, { desc = "Harpoon goto mark 5" })
 
--- Muren
-map("n", "<leader>S", function()
-  require("muren.api").toggle_ui()
-end, {
-  desc = "Toggle Muren",
-})
-
 -- NvimTree
 map("n", "<leader>+", ":NvimTreeResize +10<CR>", { silent = true, desc = "Expand NvimTree width" })
 map("n", "<leader>-", ":NvimTreeResize -10<CR>", { silent = true, desc = "Reduce NvimTree width" })
