@@ -100,3 +100,20 @@ end, { desc = "Harpoon goto mark 5" })
 -- NvimTree
 map("n", "<leader>+", ":NvimTreeResize +10<CR>", { silent = true, desc = "Expand NvimTree width" })
 map("n", "<leader>-", ":NvimTreeResize -10<CR>", { silent = true, desc = "Reduce NvimTree width" })
+
+-- NeoTest
+map("n", "<leader>tr", function()
+  require("neotest").run.run()
+end, { desc = "Run nearest test" })
+
+map("n", "<leader>tf", function()
+  require("neotest").run.run(vim.fn.expand "%")
+end, { desc = "Run all tests in file" })
+
+map("n", "<leader>ts", function()
+  require("neotest").summary.toggle()
+end, { desc = "toggle test summary" })
+
+map("n", "<leader>to", function()
+  require("neotest").output_panel.toggle()
+end, { desc = "toggle output panel" })
