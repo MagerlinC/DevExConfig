@@ -10,6 +10,8 @@ map("n", "<leader>cr", vim.lsp.buf.rename, { silent = true, desc = "Rename" })
 map("n", "<leader>tm", function()
   require("nvchad.themes").open()
 end, { desc = "telescope nvchad themes" })
+
+-- Git
 map("n", "<leader>gb", ":GitBlameToggle<CR>", { silent = true, desc = "Git blame" })
 
 -- Hop

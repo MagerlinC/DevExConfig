@@ -84,7 +84,6 @@ require("nvim-tree").setup {
   },
 }
 
--- TODO: not installed?
 require("nvim-ts-autotag").setup {
   opts = {
     -- Defaults
