@@ -3,6 +3,7 @@
 CONFIG_REPO_DIR=$HOME/git/dev-ex-config
 
 NVIM_DIR=$HOME/.config/nvim/
+ZED_DIR=$HOME/.config/zed/
 ZSH_CONFIG=$HOME/.zshrc
 IDEAVIM_CONFIG=$HOME/.ideavimrc
 STARSHIP_CONFIG=$HOME/.config/starship.toml
@@ -12,6 +13,7 @@ if [[ $1 == "pull" ]]; then
   rm -rf "${CONFIG_REPO_DIR}/nvim/"
   mkdir -p "${CONFIG_REPO_DIR}/nvim/"
   cp -r ${NVIM_DIR} "${CONFIG_REPO_DIR}/nvim/"
+  cp -r ${ZED_DIR} "${CONFIG_REPO_DIR}/zed/"
   cp $ZSH_CONFIG $CONFIG_REPO_DIR
   cp $IDEAVIM_CONFIG $CONFIG_REPO_DIR
   cp $STARSHIP_CONFIG $CONFIG_REPO_DIR
@@ -20,6 +22,7 @@ if [[ $1 == "pull" ]]; then
 elif [[ $1 == "push" ]]; then
   echo "Pushing configs into relevant dirs"
   cp -r "${CONFIG_REPO_DIR}/nvim/*" $NVIM_DIR
+  cp -r "${CONFIG_REPO_DIR}/zed/*" $ZED_DIR
   cp "${CONFIG_REPO_DIR}/.zshrc" $ZSH_CONFIG
   cp "${CONFIG_REPO_DIR}/.ideavimrc" $IDEAVIM_CONFIG
   cp "${CONFIG_REPO_DIR}/starship.toml" $STARSHIP_CONFIG
