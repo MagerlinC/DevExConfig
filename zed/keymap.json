@@ -1,10 +1,3 @@
-// Zed keymap
-//
-// For information on binding keys, see the Zed
-// documentation: https://zed.dev/docs/key-bindings
-//
-// To see the default key bindings run `zed: open default keymap`
-// from the command palette.
 [
   {
     "context": "Workspace",
@@ -15,6 +8,7 @@
       "space b o": "pane::CloseInactiveItems",
       "space e": "workspace::ToggleLeftDock",
       "space k m": "zed::OpenKeymap",
+      "space s t": "zed::OpenSettings",
       "space t": "workspace::NewTerminal"
     }
   },
@@ -42,7 +36,9 @@
       "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
       "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
       "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"]
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "space f r": "editor::FindAllReferences",
+      "space c r": "editor::Rename"
     }
   },
   {
@@ -56,7 +52,8 @@
       "c": "project_panel::Copy",
       "x": "project_panel::Cut",
       "p": "project_panel::Paste",
-      "r": "project_panel::Rename"
+      "r": "project_panel::Rename",
+      "/": "project_panel::NewSearchInDirectory"
     }
   }
 ]
