@@ -6,10 +6,7 @@
       "space s g": "workspace::NewSearch",
       "space b d": "pane::CloseActiveItem",
       "space b o": "pane::CloseInactiveItems",
-      "space e": "workspace::ToggleLeftDock",
-      "space k m": "zed::OpenKeymap",
-      "space s t": "zed::OpenSettings",
-      "space t": "workspace::NewTerminal"
+      "space e": "workspace::ToggleLeftDock"
     }
   },
   {
@@ -25,7 +22,8 @@
     "context": "VimControl && !menu",
     "bindings": {
       "shift-l": "pane::ActivateNextItem",
-      "shift-h": "pane::ActivatePrevItem"
+      "shift-h": "pane::ActivatePrevItem",
+      "space t": "workspace::NewTerminal"
     }
   },
   {
@@ -38,7 +36,11 @@
       "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
       "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
       "space f r": "editor::FindAllReferences",
-      "space c r": "editor::Rename"
+      "space c r": "editor::Rename",
+      "space s r": "search::ToggleReplace",
+      "space r a": "search::ReplaceAll",
+      "space k m": "zed::OpenKeymap",
+      "space s t": "zed::OpenSettings"
     }
   },
   {

@@ -22,6 +22,7 @@
     "dark": "Catppuccin Mocha"
   },
   "terminal": {
-    "font_family": "FiraCode Nerd Font Mono"
+    "font_family": "FiraCode Nerd Font Mono",
+    "font_size": 12
   }
 }
