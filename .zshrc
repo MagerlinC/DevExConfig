@@ -115,4 +115,6 @@ export LANG=en_US.UTF-8
 source <(fzf --zsh)
 
 alias cfigpull="~/git/dev-ex-config/config-sync.sh pull"
+alias cfigpush="~/git/dev-ex-config/config-sync.sh push"
+alias tmuxdev="~/git/dev-ex-config/dev-tmux.sh"
 eval "$(starship init zsh)"
