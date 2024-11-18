@@ -4,7 +4,7 @@ This repo contains my configuration files for:
 
 - zsh + starship
 - ideavim
-- LazyVim (nvchad)
+- NeoVim (nvchad)
 - Tmux
 - iTerm
 - zed (testing vim mode here as a possible replacement for LazyVim)
