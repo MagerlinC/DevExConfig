@@ -99,6 +99,9 @@ map("n", "<leader>5", function()
   harpoon:list():select(5)
 end, { desc = "Harpoon goto mark 5" })
 
+-- UndoTree
+map("n", "<leader>ut", ":UndotreeToggle<CR>", { silent = true, desc = "Toggle undotree" })
+
 -- NvimTree
 map("n", "<leader>+", ":NvimTreeResize +10<CR>", { silent = true, desc = "Expand NvimTree width" })
 map("n", "<leader>-", ":NvimTreeResize -10<CR>", { silent = true, desc = "Reduce NvimTree width" })
