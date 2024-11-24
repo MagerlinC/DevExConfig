@@ -4,12 +4,28 @@ local map = vim.keymap.set
 -- source keymaps
 map("n", "<leader>cc", ":source ~/.config/nvim/lua/mappings.lua<CR>", { desc = "source keymaps" })
 
--- Various mappings
+-- General mapping
 map("n", "gb", "<C-o>", { silent = true, desc = "Go back" })
 map("n", "<leader>cr", vim.lsp.buf.rename, { silent = true, desc = "Rename" })
 map("n", "<leader>tm", function()
   require("nvchad.themes").open()
 end, { desc = "telescope nvchad themes" })
+-- Visual mode move lines
+map("v", "J", ":m '>+1<CR>gv=gv", { silent = true, desc = "Move selected lines down" })
+map("v", "K", ":m '<-2<CR>gv=gv", { silent = true, desc = "Move selected lines up" })
+
+
+-- Keep cursor in middle while going up/down
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
+map("n", "N", "Nzzzv", { silent = true, desc = "Move to prev search item" })
+map("n", "n", "nzzzv", { silent = true, desc = "Move to next search item" })
+-- Clipboard saving paste/delet
+map("x", "<leader>p", "\"_dP", { silent = true, desc = "Paste over keeping clipboard" })
+map("n", "<leader>d", "\"_d", { silent = true, desc = "Delete keeping clipboard" })
+map("v", "<leader>d", "\"_d", { silent = true, desc = "Delete keeping clipboard" })
+-- Dont die on Q
+map("n", "Q", "<nop>")
 
 -- Git
 map("n", "<leader>gb", ":GitBlameToggle<CR>", { silent = true, desc = "Git blame" })
@@ -47,17 +63,6 @@ map("n", "<leader>bd", function()
 end, { desc = "close current buffer" })
 
 map("n", "<leader>bo", ":%bd|e#<CR>", { silent = true, desc = "Close all buffers except current" })
-
--- Visual mode move lines
-map("v", "J", ":m '>+1<CR>gv=gv", { silent = true, desc = "Move selected lines down" })
-map("v", "K", ":m '<-2<CR>gv=gv", { silent = true, desc = "Move selected lines up" })
-
--- Keep cursor in middle while going up/down
-map("n", "<C-d>", "<C-d>zz")
-map("n", "<C-u>", "<C-u>zz")
-
--- Dont die on Q
-map("n", "Q", "<nop>")
 
 -- Telescope
 local builtin = require "telescope.builtin"
