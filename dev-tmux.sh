@@ -4,7 +4,7 @@ tmux new -s work -d
 
 # Serve window
 tmux rename-window -t work serve
-tmux send-keys -t work 'cd ~/git/Cirrus/' C-m
+tmux send-keys -t work 'cd ~/git/Cirrus/frontend' C-m
 
 # Cmds window
 tmux new-window -t work

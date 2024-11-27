@@ -14,16 +14,15 @@ end, { desc = "telescope nvchad themes" })
 map("v", "J", ":m '>+1<CR>gv=gv", { silent = true, desc = "Move selected lines down" })
 map("v", "K", ":m '<-2<CR>gv=gv", { silent = true, desc = "Move selected lines up" })
 
-
 -- Keep cursor in middle while going up/down
 map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
 map("n", "N", "Nzzzv", { silent = true, desc = "Move to prev search item" })
 map("n", "n", "nzzzv", { silent = true, desc = "Move to next search item" })
 -- Clipboard saving paste/delet
-map("x", "<leader>p", "\"_dP", { silent = true, desc = "Paste over keeping clipboard" })
-map("n", "<leader>d", "\"_d", { silent = true, desc = "Delete keeping clipboard" })
-map("v", "<leader>d", "\"_d", { silent = true, desc = "Delete keeping clipboard" })
+map("x", "<leader>p", '"_dP', { silent = true, desc = "Paste over keeping clipboard" })
+map("n", "<leader>d", '"_d', { silent = true, desc = "Delete keeping clipboard" })
+map("v", "<leader>d", '"_d', { silent = true, desc = "Delete keeping clipboard" })
 -- Dont die on Q
 map("n", "Q", "<nop>")
 

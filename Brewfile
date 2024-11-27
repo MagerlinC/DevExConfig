@@ -1,5 +1,6 @@
 tap "homebrew/bundle"
 brew "awscli"
+brew "cowsay"
 brew "diff-so-fancy"
 brew "docker"
 brew "docker-compose"
