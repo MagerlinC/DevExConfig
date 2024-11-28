@@ -30,3 +30,4 @@ alias localrun="dotnet run --project CC.API --launch-profile Local-Docker-CC.API
 alias devrun="dotnet run --project CC.API --launch-profile Dev-CC.API"
 
 eval "$(starship init zsh)"
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
