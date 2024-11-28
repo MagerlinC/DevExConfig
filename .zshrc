@@ -21,4 +21,12 @@ source <(fzf --zsh)
 alias cfigpull="~/git/dev-ex-config/config-sync.sh pull"
 alias cfigpush="~/git/dev-ex-config/config-sync.sh push"
 alias tmuxdev="~/git/dev-ex-config/dev-tmux.sh"
+
+# Run CC BE stuff
+alias devscript="dotnet run --project src/Scripts/Scripts --launch-profile Scripts.Scripts.Dev"
+alias prodscript="dotnet run --project src/Scripts/Scripts --launch-profile Scripts.Scripts.Prod"
+
+alias localrun="dotnet run --project CC.API --launch-profile Local-Docker-CC.API"
+alias devrun="dotnet run --project CC.API --launch-profile Dev-CC.API"
+
 eval "$(starship init zsh)"
