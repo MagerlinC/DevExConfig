@@ -5,7 +5,9 @@ set showmode
 set showcmd
 set visualbell
 set clipboard+=unnamed
+set ignorecase
 set smartcase
+set cursorline
 
 
 let mapleader = " "
@@ -32,7 +34,6 @@ nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 
 " Debugging & Testing
-" TODO: run test near cursor?
 map <leader>tr <Action>(Rider.UnitTesting.RunContext)
 map <leader>tR <Action>(RiderUnitTestRepeatPreviousRunAction)
 map <leader>db <Action>(ToggleLineBreakpoint)
