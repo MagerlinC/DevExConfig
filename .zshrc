@@ -1,7 +1,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 export CDPATH=".:$HOME/git:$HOME/git/Cirrus"
 
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
 
 plugins=(git)
 
@@ -29,5 +29,15 @@ alias prodscript="dotnet run --project src/Scripts/Scripts --launch-profile Scri
 alias localrun="dotnet run --project CC.API --launch-profile Local-Docker-CC.API"
 alias devrun="dotnet run --project CC.API --launch-profile Dev-CC.API"
 
+tsapi () {
+	cd "$(git rev-parse --show-toplevel)" || exit
+	dotnet run --project ./backend/Utils/TsContractsGeneratorSwagger/TsContractsGeneratorSwagger.csproj
+	cd - > /dev/null || exit
+}
+
+# Catpuccin zsh-syntax-highlighting
+source ~/.config/zsh/catppuccin_mocha-zsh-syntax-highlighting.zsh
+
 eval "$(starship init zsh)"
+# load zsh-syntax-highlighting plugin
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

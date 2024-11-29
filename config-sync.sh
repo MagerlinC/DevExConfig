@@ -5,6 +5,7 @@ CONFIG_REPO_DIR=$HOME/git/dev-ex-config
 NVIM_DIR=$HOME/.config/nvim/
 ZED_DIR=$HOME/.config/zed/
 ZSH_CONFIG=$HOME/.zshrc
+ZSH_SYNTAX_HIGHLIGHTING_DIR=$HOME/.config/zsh/
 IDEAVIM_CONFIG=$HOME/.ideavimrc
 STARSHIP_CONFIG=$HOME/.config/starship.toml
 
@@ -15,6 +16,7 @@ if [[ $1 == "pull" ]]; then
   cp -r ${NVIM_DIR} "${CONFIG_REPO_DIR}/nvim/"
   cp -r ${ZED_DIR} "${CONFIG_REPO_DIR}/zed/"
   cp $ZSH_CONFIG $CONFIG_REPO_DIR
+  cp -r ${ZSH_SYNTAX_HIGHLIGHTING_DIR} "${CONFIG_REPO_DIR}/zsh/"
   cp $IDEAVIM_CONFIG $CONFIG_REPO_DIR
   cp $STARSHIP_CONFIG $CONFIG_REPO_DIR
   cd $CONFIG_REPO_DIR
@@ -24,6 +26,7 @@ elif [[ $1 == "push" ]]; then
   cp -r "${CONFIG_REPO_DIR}/nvim/*" $NVIM_DIR
   cp -r "${CONFIG_REPO_DIR}/zed/*" $ZED_DIR
   cp "${CONFIG_REPO_DIR}/.zshrc" $ZSH_CONFIG
+  cp "${CONFIG_REPO_DIR}/zsh" $ZSH_SYNTAX_HIGHLIGHTING_DIR
   cp "${CONFIG_REPO_DIR}/.ideavimrc" $IDEAVIM_CONFIG
   cp "${CONFIG_REPO_DIR}/starship.toml" $STARSHIP_CONFIG
   cd $CONFIG_REPO_DIR
