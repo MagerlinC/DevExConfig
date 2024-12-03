@@ -11,12 +11,16 @@ tmux new-window -t work
 tmux rename-window -t work cmds 
 tmux send-keys -t work 'cd ~/git/Cirrus/' C-m
 
-# Main editor window
+# Main editor windows
 tmux new-window -t work
-tmux rename-window -t work cirrus 
+tmux rename-window -t work FE 
 tmux send-keys -t work 'cd ~/git/Cirrus/frontend' C-m
 tmux send-keys -t work 'nvim' C-m
 
+tmux new-window -t work
+tmux rename-window -t work BE 
+tmux send-keys -t work 'cd ~/git/Cirrus/backend' C-m
+tmux send-keys -t work 'nvim' C-m
 
 # Config session
 tmux new -s config -d
