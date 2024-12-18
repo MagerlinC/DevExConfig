@@ -126,3 +126,6 @@ end, { desc = "toggle test summary" })
 map("n", "<leader>to", function()
   require("neotest").output_panel.toggle()
 end, { desc = "toggle output panel" })
+
+-- Oil
+map("n", "<leader>o", "<CMD>Oil<CR>", { desc = "Open Oil" })

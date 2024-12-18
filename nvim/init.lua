@@ -50,6 +50,12 @@ vim.schedule(function()
   require "mappings"
 end)
 
+require("oil").setup {
+  keymaps = {
+    ["b"] = { "actions.parent", mode = "n" },
+  },
+}
+
 -- nvim-tree
 require("nvim-tree").setup {
   filters = { dotfiles = false },
